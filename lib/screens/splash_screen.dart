@@ -1,4 +1,6 @@
 import 'dart:async';
+import 'package:google_fonts/google_fonts.dart';
+
 import 'home_page.dart';
 import 'package:flutter/material.dart';
 
@@ -31,10 +33,10 @@ class SplashScreen extends StatelessWidget {
                   children: [
                     Padding(
                       padding: const EdgeInsets.all(50.0),
-                      child: Text("HungryNaki",
-                          style: TextStyle(
-                            color: Colors.lightBlueAccent,
-                              fontSize: 30, fontWeight: FontWeight.bold)),
+                      child: Text("FoodBite",
+                          style: GoogleFonts.alfaSlabOne(
+                            color: Colors.white,
+                              fontSize: 30,)),
                     ),
                     Container(
                         height: h * .35,
@@ -45,9 +47,9 @@ class SplashScreen extends StatelessWidget {
                         )),
                     Padding(
                       padding: const EdgeInsets.all(50.0),
-                      child: Text("Food Delivery App", style: TextStyle(
-                          color: Colors.lightBlueAccent,
-                          fontSize: 24, fontWeight: FontWeight.bold)),
+                      child: Text("Food Delivery App", style: GoogleFonts.secularOne(
+                          color: Colors.white,
+                          fontSize: 24, )),
                     )
                   ],
                 )),
@@ -67,7 +69,7 @@ class SplashScreen extends StatelessWidget {
                   },
                   child: Text(
                     "Get Started",
-                    style: TextStyle(color: Colors.white),
+                    style: GoogleFonts.patuaOne(color: Colors.white, fontSize:18)
                   )),
             )
           ],

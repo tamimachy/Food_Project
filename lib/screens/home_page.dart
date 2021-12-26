@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:food_project/model/categories.dart';
+import 'package:food_project/screens/cart_page.dart';
 import 'package:food_project/screens/details_page.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -18,69 +20,53 @@ class _HomePageState extends State<HomePage> {
     var w = MediaQuery.of(context).size.width;
 
     return Scaffold(
+      appBar: AppBar(
+          title: Column(children: [
+            Text("FoodBite",
+                style: GoogleFonts.alfaSlabOne(
+                  color: Colors.deepOrange,
+                )),
+            Text(
+              "Order & Eat",
+              style:
+                  GoogleFonts.merriweather(color: Colors.black, fontSize: 16),
+            )
+          ]),
+          elevation: 0,
+          actions: [
+            Padding(
+              padding: const EdgeInsets.only(right: 12),
+              child: ClipRRect(
+                  borderRadius: BorderRadius.circular(30),
+                  child: Image.asset("assets/images/small.png")),
+            ),
+          ],
+          backgroundColor: Colors.white),
       body: Column(
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Container(
-                child: Padding(
-                  padding: const EdgeInsets.only(
-                    left: 25.0,
-                  ),
-                  child: Column(
-                    children: [
-                      Text(
-                        "HungryNaki",
-                        style: TextStyle(
-                            color: Colors.deepOrange,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 22),
+          Padding(
+              padding: const EdgeInsets.only(top: 10.0),
+              child: Container(
+                  height: h * 0.06,
+                  width: w * .94,
+                  child: TextField(
+                    decoration: InputDecoration(
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.deepOrange),
+                        borderRadius: BorderRadius.circular(10),
                       ),
-                      SizedBox(
-                        height: 3,
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.deepOrange),
+                        borderRadius: BorderRadius.circular(10),
                       ),
-                      Text("Order & Eat")
-                    ],
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(right: 10.0, top: 2),
-                child: Container(
-                    height: h * .09,
-                    width: w * .12,
-                    decoration: BoxDecoration(
-                        color: Colors.green,
-                        border: Border.all(width: 2, color: Colors.redAccent),
-                        borderRadius: BorderRadius.circular(30)),
-                    child: Image.asset(
-                      "assets/images/logo.png",
-                      fit: BoxFit.cover,
-                    )),
-              )
-            ],
-          ), // Top
-          SizedBox(
-            height: 10,
-          ),
-          Container(
-            height: h * .065,
-            width: w * .95,
-            decoration: BoxDecoration(
-                color: Colors.blueGrey[50],
-                borderRadius: BorderRadius.circular(12)),
-            child: TextField(
-                keyboardType: TextInputType.text,
-                textInputAction: TextInputAction.search,
-                decoration: InputDecoration(
-                  hintText: "Find your food",
-                  prefixIcon: Icon(Icons.search_sharp),
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12)),
-                  floatingLabelBehavior: FloatingLabelBehavior.auto,
-                )),
-          ), // Search Box
+                      prefixIcon: Icon(
+                        Icons.search_rounded,
+                        color: Colors.deepOrange,
+                      ),
+                      hintText: "Find your food",
+                      hintStyle: GoogleFonts.patuaOne(color: Colors.deepOrange),
+                    ),
+                  ))), // Search Box
           SizedBox(height: 10),
           Container(
             height: h * .2,
@@ -95,7 +81,7 @@ class _HomePageState extends State<HomePage> {
                   padding: const EdgeInsets.only(left: 20.0),
                   child: Container(
                       height: h * .18,
-                      width: w * .43,
+                      width: w * .48,
                       child: Image.asset("assets/images/delivery.png")),
                 ),
                 Column(
@@ -105,16 +91,17 @@ class _HomePageState extends State<HomePage> {
                           top: 30.0, right: 50, bottom: 5),
                       child: Text(
                         "Free Delivery",
-                        style: TextStyle(
-                            fontSize: 18, fontWeight: FontWeight.bold),
+                        style: GoogleFonts.patuaOne(
+                            fontSize: 19, fontWeight: FontWeight.bold),
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(right: 50),
+                      padding: const EdgeInsets.only(right: 30),
                       child: Text(
-                        "May 2 - June 10",
-                        style: TextStyle(
-                          fontWeight: FontWeight.w500,
+                        "January 1 - February 10",
+                        style: GoogleFonts.sourceSerifPro(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 16,
                         ),
                       ),
                     ),
@@ -122,7 +109,7 @@ class _HomePageState extends State<HomePage> {
                       padding: const EdgeInsets.only(right: 50, top: 5),
                       child: Container(
                           height: h * .05,
-                          width: w * .20,
+                          width: w * .23,
                           decoration: BoxDecoration(
                               color: Colors.deepOrange,
                               borderRadius: BorderRadius.circular(15)),
@@ -130,7 +117,7 @@ class _HomePageState extends State<HomePage> {
                             onPressed: () {},
                             child: Text(
                               "Order Now",
-                              style: TextStyle(color: Colors.white),
+                              style: GoogleFonts.patuaOne(color: Colors.white),
                             ),
                           )),
                     ),
@@ -150,8 +137,8 @@ class _HomePageState extends State<HomePage> {
                     alignment: Alignment.topLeft,
                     child: Text(
                       "Categories",
-                      style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+                      style: GoogleFonts.patuaOne(
+                          fontWeight: FontWeight.bold, fontSize: 18),
                     )),
                 SingleChildScrollView(
                   child: Column(
@@ -164,7 +151,7 @@ class _HomePageState extends State<HomePage> {
                             itemBuilder: (contex, index) => Container(
                                   width: w * .19,
                                   decoration: BoxDecoration(
-                                    color: Colors.blueGrey[100],
+                                    color: Colors.grey[300],
                                     borderRadius: BorderRadius.circular(10),
                                   ),
                                   margin: EdgeInsets.only(top: 10, right: 20),
@@ -179,7 +166,8 @@ class _HomePageState extends State<HomePage> {
                                             fit: BoxFit.contain,
                                           ),
                                         ),
-                                        Text("${cat[index].name}")
+                                        Text("${cat[index].name}", style: GoogleFonts.merriweather(
+                                        ),)
                                       ],
                                     ),
                                   ),
@@ -195,38 +183,42 @@ class _HomePageState extends State<HomePage> {
                   alignment: Alignment.topLeft,
                   child: Text(
                     "Popular",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 19),
+                    style: GoogleFonts.patuaOne(fontWeight: FontWeight.bold, fontSize: 19),
                   ),
                 ),
                 SingleChildScrollView(
                   child: Column(
                     children: [
                       SizedBox(
-                        height: h * .27,
+                        height: h * .265,
                         child: ListView.builder(
                             itemCount: pop.length,
                             scrollDirection: Axis.horizontal,
                             itemBuilder: (contex, index) => Container(
-                                  width: w * .27,
+                                  width: w * .28,
                                   decoration: BoxDecoration(
-                                    color: Colors.blueGrey[100],
+                                    color: Colors.white,
                                     boxShadow: [
                                       BoxShadow(
                                           blurRadius: 3, color: Colors.black54),
                                     ],
                                     borderRadius: BorderRadius.circular(10),
                                   ),
-                                  margin: EdgeInsets.only(top: 10, right: 15),
+                                  margin: EdgeInsets.only(top: 10, right: 15, left: 2, bottom: 2),
                                   child: Center(
                                     child: Column(
                                       children: [
                                         SizedBox(height: 5),
                                         Container(
-                                          child: Text("${pop[index].name}"),
+                                          child: Text("${pop[index].name}", style: GoogleFonts.merriweather(),),
                                         ),
                                         GestureDetector(
-                                          onTap: (){
-                                            Navigator.push(context, MaterialPageRoute(builder: (context)=>DetailsPage()));
+                                          onTap: () {
+                                            Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        DetailsPage()));
                                           },
                                           child: Container(
                                             height: h * .13,
@@ -237,7 +229,7 @@ class _HomePageState extends State<HomePage> {
                                             ),
                                           ),
                                         ),
-                                        Text("\$${pop[index].price}"),
+                                        Text("\$${pop[index].price}", style: TextStyle(fontWeight: FontWeight.bold),),
                                         SizedBox(
                                           height: 5,
                                         ),
@@ -255,7 +247,7 @@ class _HomePageState extends State<HomePage> {
                                               ),
                                               label: Text(
                                                 "Add",
-                                                style: TextStyle(
+                                                style: GoogleFonts.patuaOne(
                                                     color: Colors.white),
                                               )),
                                         )
@@ -276,9 +268,7 @@ class _HomePageState extends State<HomePage> {
         children: [
           buildNavBarItem(Icons.home, 0),
           buildNavBarItem(Icons.account_circle, 1),
-          GestureDetector(
-              onTap: (){},
-              child: buildNavBarItem(Icons.shopping_cart, 2)),
+          buildNavBarItem(Icons.shopping_cart, 2),
           buildNavBarItem(Icons.support, 3),
           buildNavBarItem(Icons.settings, 4),
         ],
@@ -286,12 +276,19 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  Widget buildNavBarItem(IconData icon, int index,) {
+  Widget buildNavBarItem(
+    IconData icon,
+    int index,
+  ) {
     return GestureDetector(
       onTap: () {
         setState(() {
           _selectedItemIndex = index;
         });
+        if (_selectedItemIndex == 2) {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => CardPage()));
+        }
       },
       child: Container(
         height: 60,

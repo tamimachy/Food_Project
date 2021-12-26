@@ -9,8 +9,8 @@ List<Categories>cat=[
   Categories(img: "assets/images/c_pizza.png", name: "Pizza"),
   Categories(img: "assets/images/bur.png", name: "Burger"),
   Categories(img: "assets/images/fanta.png", name: "Drink"),
-  Categories(img: "assets/images/coca.png", name: "Cake"),
-  Categories(img: "assets/images/fanta.png", name: "Chocolate"),
+  Categories(img: "assets/images/cake.png", name: "Cake"),
+  Categories(img: "assets/images/chocolate.png", name: "Chocolate"),
 ];
 
 class Popular{
@@ -26,5 +26,5 @@ List<Popular>pop=[
   Popular(name: "Pepperoni Pizza", image: "assets/images/p_pizza.png", price: 9.76),
   Popular(name: "Burger", image: "assets/images/burgers.png", price: 8.79),
   Popular(name: "Drinks", image: "assets/images/3_drink.png", price: 5.55),
-  Popular(name: "Drinks", image: "assets/images/3_drink.png", price: 5.55),
+  Popular(name: "Cakes", image: "assets/images/3_drink.png", price: 10.75),
 ];
