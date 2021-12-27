@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_project/screens/payment.dart';
 import 'package:food_project/screens/splash_screen.dart';
 
 void main(){
@@ -13,7 +14,7 @@ class FoodApp extends StatelessWidget {
       title: "FoodBite",
       theme: ThemeData(primarySwatch: Colors.deepOrange),
       debugShowCheckedModeBanner: false,
-      home: SplashScreen(),
+      home: PaymentMethod(),
     );
   }
 }

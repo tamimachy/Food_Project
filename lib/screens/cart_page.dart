@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_project/screens/home_page.dart';
+import 'package:food_project/screens/payment.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:food_project/model/categories.dart';
 
@@ -331,10 +332,15 @@ class _CardPageState extends State<CardPage> {
               ),
               child: TextButton(
                 onPressed: () {},
-                child: Text(
-                  "Checkout",
-                  style:
-                      GoogleFonts.patuaOne(fontSize: 19, color: Colors.white),
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>PaymentMethod()));
+                  },
+                  child: Text(
+                    "Checkout",
+                    style:
+                        GoogleFonts.patuaOne(fontSize: 19, color: Colors.white),
+                  ),
                 ),
               ),
             ),

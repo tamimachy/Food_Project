@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:food_project/screens/login_page.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'home_page.dart';
@@ -12,7 +13,7 @@ class SplashScreen extends StatelessWidget {
     var h = MediaQuery.of(context).size.height;
     var w = MediaQuery.of(context).size.width;
     Timer(
-        Duration(seconds: 5),
+        Duration(seconds: 10),
         () => Navigator.push(
             context, MaterialPageRoute(builder: (context) => HomePage())));
 
@@ -67,9 +68,14 @@ class SplashScreen extends StatelessWidget {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) => HomePage()));
                   },
-                  child: Text(
-                    "Get Started",
-                    style: GoogleFonts.patuaOne(color: Colors.white, fontSize:18)
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>Login()));
+                    },
+                    child: Text(
+                      "Get Started",
+                      style: GoogleFonts.patuaOne(color: Colors.white, fontSize:18)
+                    ),
                   )),
             )
           ],

@@ -27,4 +27,7 @@ List<Popular>pop=[
   Popular(name: "Burger", image: "assets/images/burgers.png", price: 8.79),
   Popular(name: "Drinks", image: "assets/images/3_drink.png", price: 5.55),
   Popular(name: "Cakes", image: "assets/images/3_drink.png", price: 10.75),
+  Popular(name: "Chips", image: "assets/images/chip.png", price: 5.60),
+  Popular(name: "Ice Cream", image: "assets/images/ice.png", price: 7.85),
+  Popular(name: "Lollipop", image: "assets/images/lollipop.png", price: 12.75),
 ];
