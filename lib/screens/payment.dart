@@ -70,25 +70,85 @@ class PaymentMethod extends StatelessWidget {
               width: 15,
             ),
             Text("Add Netbanking", style: GoogleFonts.libreBaskerville(
-              fontSize: 20,
+              fontSize: 19,
             ),),
           ]),
-          Row(children: [
-            Icon(Icons.credit_card_outlined),
-            Text("Add Credit or Debit Card"),
-          ]),
-          Row(children: [
-            Icon(Icons.settings_input_antenna),
-            Text("Use Airtel billing"),
-          ]),
-          Row(children: [
-            Icon(Icons.account_balance_wallet),
-            Text("Add bank account with BHIM UPI ID"),
-          ]),
-          Row(children: [
-            Icon(Icons.redeem_sharp),
-            Text("Redeem Code"),
-          ]),
+          Padding(
+            padding: const EdgeInsets.only(top: 10.0),
+            child: Row(children: [
+              SizedBox(
+                width: 10,
+              ),
+              Icon(
+                Icons.credit_card_outlined,
+                size: 28,
+                color: Colors.deepOrange,
+              ),
+              SizedBox(
+                width: 15,
+              ),
+              Text("Add Credit or Debit Card", style: GoogleFonts.libreBaskerville(
+                fontSize: 19,
+              ),),
+            ]),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 10.0),
+            child: Row(children: [
+              SizedBox(
+                width: 10,
+              ),
+              Icon(
+                Icons.settings_input_antenna,
+                size: 28,
+                color: Colors.deepOrange,
+              ),
+              SizedBox(
+                width: 15,
+              ),
+              Text("Use Airtel billing", style: GoogleFonts.libreBaskerville(
+                fontSize: 19,
+              ),),
+            ]),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 10.0),
+            child: Row(children: [
+              SizedBox(
+                width: 10,
+              ),
+              Icon(
+                Icons.account_balance_wallet,
+                size: 28,
+                color: Colors.deepOrange,
+              ),
+              SizedBox(
+                width: 15,
+              ),
+              Text("Add bank account with BHIM UPI ID", style: GoogleFonts.libreBaskerville(
+                fontSize: 19,
+              ),),
+            ]),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 10.0),
+            child: Row(children: [
+              SizedBox(
+                width: 10,
+              ),
+              Icon(
+                Icons.redeem_rounded,
+                size: 28,
+                color: Colors.deepOrange,
+              ),
+              SizedBox(
+                width: 15,
+              ),
+              Text("Redeem Code", style: GoogleFonts.libreBaskerville(
+                fontSize: 19,
+              ),),
+            ]),
+          ),
         ],
       ),
     );

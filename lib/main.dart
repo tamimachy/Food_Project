@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_project/screens/login_page.dart';
 import 'package:food_project/screens/payment.dart';
 import 'package:food_project/screens/splash_screen.dart';
 
@@ -12,9 +13,10 @@ class FoodApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "FoodBite",
+      
       theme: ThemeData(primarySwatch: Colors.deepOrange),
       debugShowCheckedModeBanner: false,
-      home: PaymentMethod(),
+      home: Login(),
     );
   }
 }
